@@ -1,4 +1,4 @@
-# inline_server
+# inline_web
 
 This repository hosts the code for the client side of project inline.
 
