@@ -1,4 +1,4 @@
-const rootUrl = process.env.API_URL || 'https://127.0.0.1:5000';
+const rootUrl = process.env.API_URL || 'http://127.0.0.1:5000';
 
 
 async function get(path, data) {
@@ -15,6 +15,7 @@ async function request(method, path, data) {
   const url = new URL(path, rootUrl);
 
   const options = {
+    credentials: 'include',
     method,
     headers: {},
   };
@@ -23,25 +24,32 @@ async function request(method, path, data) {
     options.headers = { 'Content-Type': 'application/json' };
     options.body = JSON.stringify(data);
   }
-
+  
   const response = await fetch(url.href, options);
-  const json = await response.json();
+  const contentType = response.headers.get("content-type");
+  let body;
+
+  if (contentType && contentType.indexOf("application/json") !== -1) {
+    body = await response.json();
+  } else {
+    body = await response.text();
+  }
 
   const { status, ok } = response;
 
   return {
-    data: json,
+    data: body,
     ok,
     status,
   };
 }
 
 
-async function login(email, password) {
+async function login(credentials) {
   let result;
 
   try {
-    result = await post('/login', { email, password });
+    result = await post('/login', credentials);
   } catch (e) {
     throw new Error('Error login');
   }

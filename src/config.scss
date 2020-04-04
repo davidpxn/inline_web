@@ -2,3 +2,50 @@
 
 $max-width: 1200px;
 $gutter: 20px;
+$offset: 40px;
+
+
+/* Colors */
+
+$turq-dark: #19CFB1;
+$turq-light: #59F6DC;
+
+$blue-dark: #014CD4;
+$blue-light: #3A80FF;
+
+$midnight: #000922;
+$coral: #F67B59;
+
+$black: #000000;
+$grey: #7A7A7A;
+$white: #ffffff;
+
+
+/* Fonts */
+
+$font-main: Montserrat, Helvetica, Arial, sans-serif;
+
+
+/* Font sizes */
+
+$xs: 12px;
+$s: 14px;
+$m: 16px;
+$l: 18px;
+$xl: 21px;
+$h: 24px;
+$xh: 36px;
+$g: 48px;
+$xg: 60px;
+$xxg: 72px;
+
+
+/* Functions */
+
+@function columns($col: 1) {
+  @return ($col / 12 * 100) * 1%;
+}
+
+@function columnsOffset($col: 1) {
+  @return $gutter/11 * $col;
+}
