@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import Form from '../../containers/form/Form';
-import Button from '../../components/button/Button';
-import Alert from '../../components/alert/Alert';
+import ButtonFancy from '../../components/buttonFancy/ButtonFancy';
 
 import { login } from '../../api/api';
 
@@ -12,18 +11,11 @@ import './Home.scss';
 
 
 function Home() {
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
-
-
   async function handleLogin(data) {
-    setErrorMessage(null);
-    setLoading(true);
-
     const result = {
       success: null,
       errors: {},
-      error: null,
+      errorMessage: null,
     };
 
     try {
@@ -36,11 +28,9 @@ function Home() {
         }
       };
     } catch (e) {
-      result.error = 'Error occured on login';
-      setErrorMessage(result.error);
+      result.errorMessage = 'Error occured on login';
     }
 
-    setLoading(false);
     return result;
   }
 
@@ -72,35 +62,22 @@ function Home() {
         </div>
         <div className="auth">
           <Form
-            id="login-form"
             submitAction={handleLogin}
             fields={[
               { name: 'email', type: 'email' },
               { name: 'password', type: 'password' },
             ]}
+            buttonType="fancy"
           />
-          <div className="auth__buttons">
-            <Button
-              form="login-form"
-              text="login"
-              offset="top"
-              color="turq"
-              loading={loading}
-            />
-            <h3 className="auth__or">or</h3>
-            <Button
-              text="signup"
-              offset="bottom"
-              color="blue"
-            />
-          </div>
+          <h3 className="auth__or">or</h3>
+          <ButtonFancy
+            text="signup"
+            offset="bottom"
+            color="blue"
+          />
         </div>
       </div>
-      <Alert
-        type="error"
-        text={errorMessage}
-      />
-    </div>
+    </div >
   );
 }
 

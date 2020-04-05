@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import './Button.scss';
+import './ButtonFancy.scss';
 
 
-function Button(props) {
+function ButtonFancy(props) {
   const {
     text,
     form,
@@ -12,22 +12,23 @@ function Button(props) {
     offset, // top or bottom
     color, // turq or blue
     loading,
+    className,
   } = props;
 
 
   return (
-    <div className="button">
+    <div className={`button-fancy ${className}`}>
       <button
-        className={`button__button button__button--${color}`}
+        className={`button-fancy__button button-fancy__button--${color}`}
         form={form}
         onClick={handleClick}
       >
         {loading ? <FontAwesomeIcon icon="slash" size="xs" spin /> : text}
       </button>
-      <div className={`button__background button__background--${offset} button__background--${color}`}></div>
+      <div className={`button-fancy__background button-fancy__background--${offset} button-fancy__background--${color}`}></div>
     </div>
   );
 }
 
 
-export default Button;
+export default ButtonFancy;

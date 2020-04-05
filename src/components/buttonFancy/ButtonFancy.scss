@@ -1,7 +1,7 @@
 @import "../../config.scss";
 
 
-.button {
+.button-fancy {
   position: relative;
 
   width: 8rem;
@@ -35,7 +35,7 @@
 
   
   &:hover {
-    .button__background {
+    .button-fancy__background {
       &--top {
         bottom: 0;
         left: 0;
