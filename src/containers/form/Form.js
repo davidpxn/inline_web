@@ -12,12 +12,14 @@ function Form(props) {
     title,
     fields,
     submitAction,
+    onSuccess,
+    errorMessage,
     buttonType,
   } = props;
 
   const [data, setData] = useState(initData(fields));
   const [errors, setErrors] = useState(initData(fields));
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [alertMessage, setAlertMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
 
@@ -43,15 +45,22 @@ function Form(props) {
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
-    setErrorMessage(null);
+    setAlertMessage(null);
 
-    const result = await submitAction(data);
+    try {
+      const result = await submitAction(data);
 
-    if (result.errors) {
-      setErrors(result.errors);
-    }
-    if (result.errorMessage) {
-      setErrorMessage(result.errorMessage);
+      if (!result.ok) {
+        const newErrors = {};
+        for (const e of result.data.errors) {
+          newErrors[e.field] = e.error;
+        }
+        setErrors(newErrors);
+      } else if (onSuccess) {
+        onSuccess();
+      }
+    } catch (e) {
+      setAlertMessage(errorMessage);
     }
 
     setLoading(false);
@@ -82,7 +91,7 @@ function Form(props) {
       }
       <Alert
         type="error"
-        text={errorMessage}
+        text={alertMessage}
       />
     </form>
   );

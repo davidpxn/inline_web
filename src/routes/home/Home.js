@@ -11,30 +11,6 @@ import './Home.scss';
 
 
 function Home() {
-  async function handleLogin(data) {
-    const result = {
-      success: null,
-      errors: {},
-      errorMessage: null,
-    };
-
-    try {
-      const response = await login(data);
-      result.success = response.ok;
-
-      if (!response.ok) {
-        for (const e of response.data.errors) {
-          result.errors[e.field] = e.error;
-        }
-      };
-    } catch (e) {
-      result.errorMessage = 'Error occured on login';
-    }
-
-    return result;
-  }
-
-
   return (
     <div className="home">
       <img
@@ -62,7 +38,8 @@ function Home() {
         </div>
         <div className="auth">
           <Form
-            submitAction={handleLogin}
+            submitAction={login}
+            errorMessage="Error occured on login"
             fields={[
               { name: 'email', type: 'email' },
               { name: 'password', type: 'password' },
