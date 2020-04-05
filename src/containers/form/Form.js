@@ -8,6 +8,7 @@ import './Form.scss';
 function Form(props) {
   const {
     id,
+    title,
     fields,
     submitAction,
   } = props;
@@ -47,6 +48,7 @@ function Form(props) {
 
   return (
     <form className="form" onSubmit={handleSubmit} id={id} noValidate>
+      <h2>{title}</h2>
       {fields.map((field) => (
         <Field
           name={field.name}

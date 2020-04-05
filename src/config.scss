@@ -3,6 +3,7 @@
 $max-width: 1200px;
 $gutter: 20px;
 $offset: 40px;
+$num-col: 12;
 
 
 /* Colors */
@@ -37,15 +38,11 @@ $h: 24px;
 $xh: 36px;
 $g: 48px;
 $xg: 60px;
-$xxg: 72px;
+$xxg: 80px;
 
 
 /* Functions */
 
 @function columns($col: 1) {
-  @return ($col / 12 * 100) * 1%;
-}
-
-@function columnsOffset($col: 1) {
-  @return $gutter/11 * $col;
+  @return calc(#{$col} * ((100% - 2*#{$offset} - (#{$num-col} - 1)*#{$gutter}) / #{$num-col} + #{$gutter}) + #{$offset});
 }

@@ -3,30 +3,93 @@
 
 .home {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
   height: 100vh;
-  padding: 0 columns();
+  background-color: $midnight;
+
+
+  &__logo {
+    align-self: flex-end;
+
+    max-width: auto;
+    height: 60px;
+    margin-right: 1rem;
+  }
+
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 columns();
+    height: 100%;
+  }
 }
 
 
 .welcome {
-  margin: 0 columnsOffset();
-  min-height: 100%;
-  width: 50%;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  width: 50%;
+
 
   &__heading {
     font-size: $xxg;
     font-weight: bold;
     color: $turq-light;
+    line-height: 1;
   }
 
+  
+  &__text {
+    font-size: $h;
+    font-weight: normal;
+    color: $white;
+  }
+
+  
   &__img {
-    max-width: auto;
-    height: 40vh;
     align-self: flex-start;
+    margin-left: 3rem;
+
+    max-width: auto;
+    height: 20vh;
+
+    position: relative;
+    top: 0;
+    transition: top 600ms ease-out;
+
+    &:hover {
+      top: 2rem;
+    }
+  }
+}
+
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+
+
+  &__or {
+    color: $white;
+    font-size: $m;
+    font-weight: bold;
+    margin: 1.5rem 0;
+  }
+
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
   }
 }

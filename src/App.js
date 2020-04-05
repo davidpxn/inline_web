@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Home from './routes/home/Home';
 
+import initIcons from './icon';
 import './App.scss';
 
 
@@ -19,4 +20,5 @@ function App() {
 }
 
 
+initIcons();
 export default App;

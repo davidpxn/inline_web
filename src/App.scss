@@ -1,10 +1,13 @@
 @import "./config.scss";
-@import "./grid.scss";
+//@import "./grid.scss";
 
 
 * {
   padding: 0;
   margin: 0;
+
+  font-family: $font-main;
+
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -19,13 +22,23 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
 
-  font-family: $font-main;
   font-size: $m;
-
-  padding-left: $offset;
-  padding-right: $offset;
+  color: $black;
 }
 
 img {
   max-width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $white;
+  -webkit-box-shadow: 0 0 0 30px $midnight inset !important;
 }

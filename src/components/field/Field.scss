@@ -1,0 +1,53 @@
+@import "../../config.scss";
+
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  width: 70%;
+  margin-bottom: 1rem;
+
+  
+  &:focus-within {
+    .field__label {
+      color: $turq-dark;
+    }
+
+    .field__input {
+      border-color: $turq-dark;
+    }
+  }
+
+
+  &__label {
+    color: $white;
+    font-weight: 500;
+    font-size: $s;
+    transition: color 200ms ease-out;
+  }
+
+
+  &__input {
+    border: none;
+    border-bottom: 2px solid $white;
+    outline: none;
+
+    background-color: transparent;
+    transition: border-color 200ms ease-out;
+
+    color: $white;
+    font-size: $m;
+    line-height: 2rem;
+
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+  &__error {
+    color: $coral;
+    font-weight: normal;
+    font-size: $xs;
+  }
+}
