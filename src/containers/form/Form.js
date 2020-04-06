@@ -15,6 +15,7 @@ function Form(props) {
     onSuccess,
     errorMessage,
     buttonType,
+    className,
   } = props;
 
   const [data, setData] = useState(initData(fields));
@@ -68,8 +69,8 @@ function Form(props) {
 
 
   return (
-    <form className="form" onSubmit={handleSubmit} noValidate>
-      <h2>{title}</h2>
+    <form className={`form ${className}`} onSubmit={handleSubmit} noValidate>
+      <h2 className="form__title">{title}</h2>
       {fields.map((field) => (
         <Field
           name={field.name}

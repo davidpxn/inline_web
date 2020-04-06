@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Form from '../../containers/form/Form';
+import Modal from '../../components/modal/Modal';
 import ButtonFancy from '../../components/buttonFancy/ButtonFancy';
 import Header from '../../components/header/Header';
 
@@ -11,9 +12,11 @@ import './Home.scss';
 
 
 function Home(props) {
+  const [signup, setSignup] = useState(false);
+
   return (
     <div className="home">
-      <Header/>
+      <Header />
       <div className="home__content">
         <div className="welcome">
           <h1 className="welcome__heading">
@@ -41,14 +44,19 @@ function Home(props) {
               { name: 'password', type: 'password' },
             ]}
             buttonType="fancy"
+            className="login-form"
           />
           <h3 className="auth__or">or</h3>
           <ButtonFancy
             text="signup"
             offset="bottom"
             color="blue"
-            handleClick={() => props.history.push('/signup')}
+            handleClick={() => setSignup(true)}
           />
+          <Modal open={signup} onClose={() => setSignup(false)}>
+          <h1 className="a">fwewe</h1>
+
+          </Modal>
         </div>
       </div>
     </div >
