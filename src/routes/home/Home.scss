@@ -9,15 +9,6 @@
   background-color: $midnight;
 
 
-  &__logo {
-    align-self: flex-end;
-
-    max-width: auto;
-    height: 60px;
-    margin-right: 1rem;
-  }
-
-
   &__content {
     display: flex;
     justify-content: space-between;

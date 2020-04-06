@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Form from '../../containers/form/Form';
 import ButtonFancy from '../../components/buttonFancy/ButtonFancy';
+import Header from '../../components/header/Header';
 
 import { login } from '../../api/api';
 
 import mascot_lookup from '../../img/mascot_lookup.png';
-import logo from '../../img/logo.png';
 import './Home.scss';
 
 
-function Home() {
+function Home(props) {
   return (
     <div className="home">
-      <img
-        className="home__logo"
-        src={logo}
-        alt="inline logo"
-      />
+      <Header/>
       <div className="home__content">
         <div className="welcome">
           <h1 className="welcome__heading">
@@ -51,6 +47,7 @@ function Home() {
             text="signup"
             offset="bottom"
             color="blue"
+            handleClick={() => props.history.push('/signup')}
           />
         </div>
       </div>

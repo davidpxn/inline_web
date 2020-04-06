@@ -1,0 +1,21 @@
+@import "../../config.scss";
+
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  
+  
+  &__logo {
+    max-width: auto;
+    height: 25px;
+  }
+
+
+  &__home {
+    margin: 1rem;
+    margin-right: 2rem;
+  }
+}
