@@ -51,6 +51,7 @@ async function login(credentials) {
   try {
     result = await post('/login', credentials);
   } catch (e) {
+    console.error(e)
     throw new Error('Error login');
   }
 
@@ -64,6 +65,7 @@ async function logout() {
   try {
     result = await get('/logout');
   } catch (e) {
+    console.error(e)
     throw new Error('Error logout');
   }
 
@@ -77,6 +79,7 @@ async function signup(data) {
   try {
     result = await post('/signup', data);
   } catch (e) {
+    console.error(e)
     throw new Error('Error signup');
   }
 
