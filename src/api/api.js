@@ -1,4 +1,4 @@
-const rootUrl = process.env.API_URL;
+const rootUrl = process.env.REACT_APP_API_URL;
 
 
 async function get(path, data) {
@@ -12,8 +12,6 @@ async function post(path, data) {
 
 
 async function request(method, path, data) {
-  console.info(`Sending request to: ${rootUrl}`);
-  
   const url = new URL(path, rootUrl);
 
   const options = {
