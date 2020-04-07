@@ -62,6 +62,7 @@ function Home(props) {
               onSuccess={() => props.history.push('/portal')}
               errorMessage="Error occured on signup"
               theme="light"
+              className="signup-form" 
               categories={[
                 {
                   categoryName: 'user',

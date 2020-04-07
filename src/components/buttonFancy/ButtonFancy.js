@@ -7,7 +7,6 @@ import './ButtonFancy.scss';
 function ButtonFancy(props) {
   const {
     text,
-    form,
     handleClick,
     offset, // top or bottom
     color, // turq or blue
@@ -20,7 +19,6 @@ function ButtonFancy(props) {
     <div className={`button-fancy ${className}`}>
       <button
         className={`button-fancy__button button-fancy__button--${color}`}
-        form={form}
         onClick={handleClick}
       >
         {loading ? <FontAwesomeIcon icon="slash" size="xs" spin /> : text}

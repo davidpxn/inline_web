@@ -84,7 +84,7 @@ function MultiForm(props) {
           counter++;
         }
 
-      } 
+      }
     } catch (e) {
       setAlertMessage(errorMessage);
     }
@@ -92,8 +92,8 @@ function MultiForm(props) {
     setLoading(false);
 
     if (onSuccess && result.ok) {
-        onSuccess();
-      }
+      onSuccess();
+    }
   }
 
 
@@ -119,10 +119,9 @@ function MultiForm(props) {
       return (
         <Button
           text="back"
-          color="blue"
+          color="turq"
           fill={false}
           handleClick={prev}
-          type="button"
         />
       );
     }
@@ -136,20 +135,18 @@ function MultiForm(props) {
       return (
         <Button
           text="next"
-          color="turq"
+          color="blue"
           fill={true}
           handleClick={next}
-          type="button"
         />
       );
     } else if (currentStep >= categories.length) {
       return (
         <Button
           text="finish"
-          color="turq"
+          color="blue"
           fill={true}
           handleClick={handleSubmit}
-          type="button"
           loading={loading}
         />
       );
@@ -160,28 +157,33 @@ function MultiForm(props) {
 
 
   return (
-    <form className={`multi-form multi-form--${theme} ${className}`} noValidate>
-      {categories.map((category, i) => (
-        <FormStep
-          title={category.title}
-          name={category.categoryName}
-          fields={category.fields}
-          step={i + 1}
-          currentStep={currentStep}
-          handleChange={handleChange}
-          data={data[category.categoryName]}
-          errors={errors[category.categoryName]}
-          theme={theme}
-          key={category.categoryName}
-        />
-      ))}
-      {previousButton()}
-      {nextButton()}
+    <div className={`multi-form multi-form--${theme} ${className}`}>
+      <form noValidate>
+        {categories.map((category, i) => (
+          <FormStep
+            title={category.title}
+            name={category.categoryName}
+            fields={category.fields}
+            step={i + 1}
+            currentStep={currentStep}
+            handleChange={handleChange}
+            data={data[category.categoryName]}
+            errors={errors[category.categoryName]}
+            theme={theme}
+            key={category.categoryName}
+          />
+        ))}
+      </form>
+      <div className="multi-form__buttons">
+        {nextButton()}
+        {previousButton()}
+      </div>
       <Alert
         type="error"
         text={alertMessage}
       />
-    </form>
+    </div>
+
   );
 }
 

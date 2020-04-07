@@ -2,6 +2,10 @@
 
 
 .multi-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
 
   &--dark {
     background-color: $midnight;
@@ -10,5 +14,13 @@
 
   &--light {
     background-color: $white;
+  }
+
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 1rem;
   }
 }

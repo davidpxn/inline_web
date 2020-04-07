@@ -7,12 +7,10 @@ import './Button.scss';
 function Button(props) {
   const {
     text,
-    form,
     handleClick,
     color, // turq or blue
     fill,
     loading,
-    type,
     className,
   } = props;
 
@@ -20,9 +18,7 @@ function Button(props) {
   return (
     <button
       className={`button button--${color}${fill ? '--fill' : ''} ${className}`}
-      form={form}
       onClick={handleClick}
-      type={type}
     >
       {loading ? <FontAwesomeIcon icon="slash" size="xs" spin /> : text}
     </button>

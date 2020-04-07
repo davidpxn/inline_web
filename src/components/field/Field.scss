@@ -6,10 +6,12 @@
   flex-direction: column;
 
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 
 
   &--dark {
+    @include autofill-style(false);
+
     & .field__label {
       color: $white;
     }
@@ -18,11 +20,23 @@
       color: $white;
       border-color: $white;
     }
+
+    &:focus-within {
+      .field__label {
+        color: $turq-dark;
+      }
+  
+      .field__input {
+        border-color: $turq-dark;
+      }
+    }
   }
 
 
   
   &--light {
+    @include autofill-style(true);
+
     & .field__label {
       color: $black;
     }
@@ -31,16 +45,15 @@
       color: $black;
       border-color: $black;
     }
-  }
 
+    &:focus-within {
+      .field__label {
+        color: $blue-dark;
+      }
   
-  &:focus-within {
-    .field__label {
-      color: $turq-dark;
-    }
-
-    .field__input {
-      border-color: $turq-dark;
+      .field__input {
+        border-color: $blue-dark;
+      }
     }
   }
 
