@@ -62,7 +62,7 @@ $xxg: 80px;
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
       -webkit-text-fill-color: $black;
-      -webkit-box-shadow: 0 0 0 30px $white inset !important;
+      box-shadow: 0 0 0 30px $white inset !important;
     }
   } @else {
     & input:-webkit-autofill,
@@ -75,7 +75,7 @@ $xxg: 80px;
       select:-webkit-autofill:hover,
       select:-webkit-autofill:focus {
         -webkit-text-fill-color: $white;
-        -webkit-box-shadow: 0 0 0 30px $midnight inset !important;
+        box-shadow: 0 0 0 30px $midnight inset !important;
       }
   }
 }
