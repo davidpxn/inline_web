@@ -48,7 +48,7 @@ function Form(props) {
     setLoading(true);
     setAlertMessage(null);
 
-    let result;
+    let result = {};
     try {
       result = await submitAction(data);
 
