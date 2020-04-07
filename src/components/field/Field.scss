@@ -8,6 +8,31 @@
   width: 100%;
   margin-bottom: 1rem;
 
+
+  &--dark {
+    & .field__label {
+      color: $white;
+    }
+
+    & .field__input {
+      color: $white;
+      border-color: $white;
+    }
+  }
+
+
+  
+  &--light {
+    & .field__label {
+      color: $black;
+    }
+
+    & .field__input {
+      color: $black;
+      border-color: $black;
+    }
+  }
+
   
   &:focus-within {
     .field__label {
@@ -21,7 +46,6 @@
 
 
   &__label {
-    color: $white;
     font-weight: 500;
     font-size: $s;
     transition: color 200ms ease-out;
@@ -30,13 +54,12 @@
 
   &__input {
     border: none;
-    border-bottom: 2px solid $white;
+    border-bottom: 2px solid;
     outline: none;
 
     background-color: transparent;
     transition: border-color 200ms ease-out;
 
-    color: $white;
     font-size: $m;
     line-height: 2rem;
 

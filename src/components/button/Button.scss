@@ -1,0 +1,43 @@
+@import "../../config.scss";
+
+
+.button {
+  font-size: $l;
+  font-weight: bold;
+  
+  position: relative; 
+  bottom: 0;
+
+  padding: 0.5rem 1rem;
+  border: 3px solid transparent;
+  outline: none;
+
+  background-color: transparent;
+  cursor: pointer;
+  transition: bottom 200ms ease-out;
+
+
+  &:hover {
+    bottom: 3px;
+  } 
+
+
+  &--blue {
+    border-color: $blue-dark;
+
+    &--fill {
+      background-color: $blue-dark;
+      color: $white;
+    }
+  }
+
+
+  &--turq {
+    border-color: $turq-dark;
+
+    &--fill {
+      background-color: $turq-dark;
+      color: $white
+    }
+  } 
+}

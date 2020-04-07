@@ -1,0 +1,14 @@
+@import "../../config.scss";
+
+
+.multi-form {
+
+  &--dark {
+    background-color: $midnight;
+  }
+
+
+  &--light {
+    background-color: $white;
+  }
+}

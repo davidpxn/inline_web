@@ -6,16 +6,18 @@ import './Field.scss';
 function Field(props) {
   const {
     name,
+    title,
     value,
     error,
     type,
     handleChange,
+    theme,
   } = props;
 
 
   return (
-    <div className="field">
-      <label className="field__label" htmlFor={name}>{name}</label>
+    <div className={`field field--${theme}`}>
+      <label className="field__label" htmlFor={name}>{title}</label>
       <input
         className="field__input"
         id={name}

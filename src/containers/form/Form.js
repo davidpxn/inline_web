@@ -16,6 +16,7 @@ function Form(props) {
     errorMessage,
     buttonType,
     className,
+    theme,
   } = props;
 
   const [data, setData] = useState(initData(fields));
@@ -35,8 +36,7 @@ function Form(props) {
 
 
   function handleChange(event) {
-    const target = event.target;
-    const { name, value } = target;
+    const { name, value } = event.target;
     setData(prevData => ({
       ...prevData, [name]: value
     }));
@@ -48,8 +48,9 @@ function Form(props) {
     setLoading(true);
     setAlertMessage(null);
 
+    let result;
     try {
-      const result = await submitAction(data);
+      result = await submitAction(data);
 
       if (!result.ok) {
         const newErrors = {};
@@ -57,14 +58,16 @@ function Form(props) {
           newErrors[e.field] = e.error;
         }
         setErrors(newErrors);
-      } else if (onSuccess) {
-        onSuccess();
       }
     } catch (e) {
       setAlertMessage(errorMessage);
     }
 
     setLoading(false);
+
+    if (onSuccess && result.ok) {
+      onSuccess();
+    }
   }
 
 
@@ -73,11 +76,13 @@ function Form(props) {
       <h2 className="form__title">{title}</h2>
       {fields.map((field) => (
         <Field
+          title={field.title}
           name={field.name}
           type={field.type}
           value={data[field.name]}
           error={errors[field.name]}
           handleChange={handleChange}
+          theme={theme}
           key={field.name}
         />
       ))}

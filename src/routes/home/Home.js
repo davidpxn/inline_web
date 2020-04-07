@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 
 import Form from '../../containers/form/Form';
+import MultiForm from '../../containers/multiForm/MultiForm';
 import Modal from '../../components/modal/Modal';
 import ButtonFancy from '../../components/buttonFancy/ButtonFancy';
 import Header from '../../components/header/Header';
 
-import { login } from '../../api/api';
+import { login, signup } from '../../api/api';
 
 import mascot_lookup from '../../img/mascot_lookup.png';
 import './Home.scss';
 
 
 function Home(props) {
-  const [signup, setSignup] = useState(false);
+  const [signupOpen, setSignupOpen] = useState(false);
 
   return (
     <div className="home">
@@ -38,24 +39,58 @@ function Home(props) {
         <div className="auth">
           <Form
             submitAction={login}
+            onSuccess={() => props.history.push('/portal')}
             errorMessage="Error occured on login"
             fields={[
-              { name: 'email', type: 'email' },
-              { name: 'password', type: 'password' },
+              { name: 'email', title: 'email', type: 'email' },
+              { name: 'password', title: 'password', type: 'password' },
             ]}
             buttonType="fancy"
             className="login-form"
+            theme="dark"
           />
           <h3 className="auth__or">or</h3>
           <ButtonFancy
             text="signup"
             offset="bottom"
             color="blue"
-            handleClick={() => setSignup(true)}
+            handleClick={() => setSignupOpen(true)}
           />
-          <Modal open={signup} onClose={() => setSignup(false)}>
-          <h1 className="a">fwewe</h1>
-
+          <Modal open={signupOpen} onClose={() => setSignupOpen(false)}>
+            <MultiForm
+              submitAction={signup}
+              onSuccess={() => props.history.push('/portal')}
+              errorMessage="Error occured on signup"
+              theme="light"
+              categories={[
+                {
+                  categoryName: 'user',
+                  title: 'personal information',
+                  fields: [
+                    { name: 'name', title: 'name', type: 'text' },
+                    { name: 'email', title: 'email', type: 'email' },
+                    { name: 'password', title: 'password', type: 'password' },
+                    { name: 'passwordConfirm', title: 'confirm password', type: 'password' },
+                  ]
+                },
+                {
+                  categoryName: 'company',
+                  title: 'company information',
+                  fields: [
+                    { name: 'name', title: 'company name', type: 'text' },
+                    { name: 'country', title: 'country', type: 'text' },
+                    { name: 'website', title: 'website', type: 'url' },
+                  ]
+                },
+                {
+                  categoryName: 'branch',
+                  title: "finally,\nlet's add a branch",
+                  fields: [
+                    { name: 'name', title: 'branch name', type: 'text' },
+                  ]
+                }
+              ]}
+            />
           </Modal>
         </div>
       </div>
