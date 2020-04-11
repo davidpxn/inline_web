@@ -22,13 +22,13 @@
     outline: none;
     cursor: pointer;
 
-    &--blue {
-      background-color: $blue-dark;
+    &--black {
+      background-color: $black;
       color: $white;
     }
 
-    &--turq {
-      background-color: $turq-light;
+    &--white {
+      background-color: $white;
       color: $black
     } 
   }
@@ -66,12 +66,12 @@
       right: 6px;
     }
   
-    &--blue {
-      background-color: $blue-light;
+    &--black {
+      background-color: $white;
     }
 
-    &--turq {
-      background-color: $turq-dark;
+    &--white {
+      background-color: $black;
     }
   }
 }

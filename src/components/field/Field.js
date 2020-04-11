@@ -11,12 +11,11 @@ function Field(props) {
     error,
     type,
     handleChange,
-    theme,
   } = props;
 
 
   return (
-    <div className={`field field--${theme}`}>
+    <div className="field">
       <label className="field__label" htmlFor={name}>{title}</label>
       <input
         className="field__input"

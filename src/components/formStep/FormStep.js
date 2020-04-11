@@ -15,7 +15,6 @@ function FormStep(props) {
     errors,
     step,
     currentStep,
-    theme,
   } = props;
 
 
@@ -34,7 +33,6 @@ function FormStep(props) {
           value={data[field.name]}
           error={errors[field.name]}
           handleChange={handleChange}
-          theme={theme}
           key={field.name}
         />
       ))}

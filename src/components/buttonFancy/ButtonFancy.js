@@ -9,7 +9,7 @@ function ButtonFancy(props) {
     text,
     handleClick,
     offset, // top or bottom
-    color, // turq or blue
+    color, // black or white
     loading,
     className,
   } = props;

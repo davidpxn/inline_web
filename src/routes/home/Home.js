@@ -53,7 +53,7 @@ function Home(props) {
           <ButtonFancy
             text="signup"
             offset="bottom"
-            color="blue"
+            color="black"
             handleClick={() => setSignupOpen(true)}
           />
           <Modal open={signupOpen} onClose={() => setSignupOpen(false)}>

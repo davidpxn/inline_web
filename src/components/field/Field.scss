@@ -8,52 +8,14 @@
   width: 100%;
   margin-bottom: 1.5rem;
 
-
-  &--dark {
-    @include autofill-style(false);
-
-    & .field__label {
-      color: $white;
-    }
-
-    & .field__input {
-      color: $white;
-      border-color: $white;
-    }
-
-    &:focus-within {
-      .field__label {
-        color: $turq-dark;
-      }
   
-      .field__input {
-        border-color: $turq-dark;
-      }
-    }
-  }
-
-
-  
-  &--light {
-    @include autofill-style(true);
-
-    & .field__label {
-      color: $black;
+  &:focus-within {
+    .field__label {
+      color: $red;
     }
 
-    & .field__input {
-      color: $black;
-      border-color: $black;
-    }
-
-    &:focus-within {
-      .field__label {
-        color: $blue-dark;
-      }
-  
-      .field__input {
-        border-color: $blue-dark;
-      }
+    .field__input {
+      border-color: $red;
     }
   }
 
@@ -62,6 +24,7 @@
     font-weight: 500;
     font-size: $s;
     transition: color 200ms ease-out;
+    color: $black;
   }
 
 
@@ -73,6 +36,9 @@
     background-color: transparent;
     transition: border-color 200ms ease-out;
 
+    color: $black;
+    border-color: $black;
+
     font-size: $m;
     line-height: 2rem;
 
@@ -82,7 +48,7 @@
 
 
   &__error {
-    color: $coral;
+    color: $red;
     font-weight: normal;
     font-size: $xs;
   }

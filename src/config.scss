@@ -8,14 +8,8 @@ $num-col: 12;
 
 /* Colors */
 
-$turq-dark: #19CFB1;
-$turq-light: #59F6DC;
-
-$blue-dark: #014CD4;
-$blue-light: #3A80FF;
-
-$midnight: #000922;
-$coral: #F67B59;
+$yellow: #F2E63C;
+$red: #F23C57;
 
 $black: #000000;
 $grey: #7A7A7A;
@@ -50,8 +44,8 @@ $xxg: 80px;
 
 /* Mixins */
 
-@mixin autofill-style($light-theme) {
-  @if $light-theme {
+@mixin autofill-style($yellow) {
+  @if $yellow {
     & input:-webkit-autofill,
     input:-webkit-autofill:hover, 
     input:-webkit-autofill:focus,
@@ -62,7 +56,7 @@ $xxg: 80px;
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
       -webkit-text-fill-color: $black;
-      box-shadow: 0 0 0 30px $white inset !important;
+      box-shadow: 0 0 0 30px #F2E63C inset !important;
     }
   } @else {
     & input:-webkit-autofill,
@@ -74,8 +68,8 @@ $xxg: 80px;
       select:-webkit-autofill,
       select:-webkit-autofill:hover,
       select:-webkit-autofill:focus {
-        -webkit-text-fill-color: $white;
-        box-shadow: 0 0 0 30px $midnight inset !important;
+        -webkit-text-fill-color: $black;
+        box-shadow: 0 0 0 30px $white inset !important;
       }
   }
 }

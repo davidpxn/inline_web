@@ -16,7 +16,6 @@ function Form(props) {
     errorMessage,
     buttonType,
     className,
-    theme,
   } = props;
 
   const [data, setData] = useState(initData(fields));
@@ -82,7 +81,6 @@ function Form(props) {
           value={data[field.name]}
           error={errors[field.name]}
           handleChange={handleChange}
-          theme={theme}
           key={field.name}
         />
       ))}
@@ -90,7 +88,7 @@ function Form(props) {
         <ButtonFancy
           text="login"
           offset="top"
-          color="turq"
+          color="white"
           loading={loading}
           className="form__button"
         />

@@ -8,7 +8,7 @@ function Button(props) {
   const {
     text,
     handleClick,
-    color, // turq or blue
+    color, // red or black
     fill,
     loading,
     className,

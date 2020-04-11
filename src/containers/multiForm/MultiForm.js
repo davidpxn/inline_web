@@ -14,7 +14,6 @@ function MultiForm(props) {
     onSuccess,
     errorMessage,
     className,
-    theme,
   } = props;
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -119,7 +118,7 @@ function MultiForm(props) {
       return (
         <Button
           text="back"
-          color="turq"
+          color="black"
           fill={false}
           handleClick={prev}
         />
@@ -135,7 +134,7 @@ function MultiForm(props) {
       return (
         <Button
           text="next"
-          color="blue"
+          color="red"
           fill={true}
           handleClick={next}
         />
@@ -144,7 +143,7 @@ function MultiForm(props) {
       return (
         <Button
           text="finish"
-          color="blue"
+          color="red"
           fill={true}
           handleClick={handleSubmit}
           loading={loading}
@@ -157,7 +156,7 @@ function MultiForm(props) {
 
 
   return (
-    <div className={`multi-form multi-form--${theme} ${className}`}>
+    <div className={`multi-form ${className}`}>
       <form noValidate>
         {categories.map((category, i) => (
           <FormStep
@@ -169,7 +168,6 @@ function MultiForm(props) {
             handleChange={handleChange}
             data={data[category.categoryName]}
             errors={errors[category.categoryName]}
-            theme={theme}
             key={category.categoryName}
           />
         ))}

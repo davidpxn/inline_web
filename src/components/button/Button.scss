@@ -22,21 +22,21 @@
   } 
 
 
-  &--blue {
-    border-color: $blue-dark;
+  &--red {
+    border-color: $red;
 
     &--fill {
-      background-color: $blue-dark;
+      background-color: $red;
       color: $white;
     }
   }
 
 
-  &--turq {
-    border-color: $turq-dark;
+  &--black {
+    border-color: $black;
 
     &--fill {
-      background-color: $turq-dark;
+      background-color: $black;
       color: $white
     }
   } 
