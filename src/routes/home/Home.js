@@ -47,7 +47,6 @@ function Home(props) {
             ]}
             buttonType="fancy"
             className="login-form"
-            theme="dark"
           />
           <h3 className="auth__or">or</h3>
           <ButtonFancy
@@ -61,7 +60,6 @@ function Home(props) {
               submitAction={signup}
               onSuccess={() => props.history.push('/portal')}
               errorMessage="Error occured on signup"
-              theme="light"
               className="signup-form" 
               categories={[
                 {
