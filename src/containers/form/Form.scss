@@ -13,7 +13,14 @@
 
   
   &__title {
+    font-size: $h;
     color: $black;
+    margin-bottom: 2rem;
+  }
+
+
+  &__logo {
+    height: 40px;
     margin-bottom: 1rem;
   }
 }

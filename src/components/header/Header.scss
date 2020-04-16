@@ -3,11 +3,12 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   width: 100%;
   background-color: $yellow;
-  
+  padding: 1rem 2rem 0 2rem;
+
   
   &__logo {
     max-width: auto;
@@ -15,7 +16,39 @@
   }
 
 
-  &__home {
-    margin: 1rem 2rem 0 0;
+  &__actions {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+}
+
+
+.header__action {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  font-size: $l;
+  font-weight: bold;
+  transition: color 200ms ease-out;
+
+
+  &-container{
+    margin: 0 0.5rem;
+    padding: 2px 12px 2px 5px;
+
+    background: linear-gradient(to right, $black 50%, $yellow 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 200ms ease-out;
+
+    &:hover {
+      background-position: left bottom;
+
+      & .header__action {
+        color: white;
+      }
+    }
   }
 }

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 import Field from '../../components/field/Field';
 import ButtonFancy from '../../components/buttonFancy/ButtonFancy';
+import Button from '../../components/button/Button';
 import Alert from '../../components/alert/Alert';
 
+import logo from '../../img/logo_white.png';
 import './Form.scss';
 
 
@@ -15,7 +17,9 @@ function Form(props) {
     onSuccess,
     errorMessage,
     buttonType,
+    buttonTitle,
     className,
+    showLogo,
   } = props;
 
   const [data, setData] = useState(initData(fields));
@@ -72,6 +76,13 @@ function Form(props) {
 
   return (
     <form className={`form ${className}`} onSubmit={handleSubmit} noValidate>
+      {showLogo &&
+        <img
+          className="form__logo"
+          src={logo}
+          alt="inline logo"
+        />
+      }
       <h2 className="form__title">{title}</h2>
       {fields.map((field) => (
         <Field
@@ -84,12 +95,19 @@ function Form(props) {
           key={field.name}
         />
       ))}
-      {buttonType === 'fancy' &&
+      {buttonType === 'fancy' ?
         <ButtonFancy
-          text="login"
+          text={buttonTitle}
           offset="top"
           color="white"
           loading={loading}
+          className="form__button"
+        /> :
+        <Button
+          text={buttonTitle}
+          color="red"
+          loading={loading}
+          fill={true}
           className="form__button"
         />
       }
