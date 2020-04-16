@@ -43,8 +43,10 @@
     height: 20vh;
 
     position: relative;
-    top: 0;
     transition: top 600ms ease-out;
+    top: 0;
+
+    animation: slide-up 3000ms ease-out;
 
     &:hover {
       top: 2rem;
@@ -68,4 +70,23 @@
   width: 40vw;
 
   padding: 2rem 3rem 1rem 3rem;
+}
+
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(12rem);
+  }
+  10% {
+    transform: translateY(12rem);
+  }
+  40% {
+    transform: translateY(2rem);
+  }
+  80% {
+    transform: translateY(2rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
