@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Form from '../../containers/form/Form';
 import MultiForm from '../../containers/multiForm/MultiForm';
 import Modal from '../../components/modal/Modal';
 import Header from '../../components/header/Header';
 
-import { login, signup } from '../../api/api';
-
+import { UserContext } from '../../contexts/UserContext';
 import mascot_lookup from '../../img/mascot_lookup.png';
 import './Home.scss';
 
 
 function Home(props) {
+  const { loginUser, signupUser } = useContext(UserContext);
+
   const [signupOpen, setSignupOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
@@ -42,8 +43,8 @@ function Home(props) {
       </div>
       <Modal open={signupOpen} onClose={() => setSignupOpen(false)}>
         <MultiForm
-          submitAction={signup}
-          onSuccess={() => props.history.push('/portal')}
+          submitAction={signupUser}
+          onSuccess={() => props.history.replace('/portal')}
           errorMessage="Error occured on signup"
           className="signup-form"
           categories={[
@@ -78,8 +79,8 @@ function Home(props) {
       </Modal>
       <Modal open={loginOpen} onClose={() => setLoginOpen(false)}>
         <Form
-          submitAction={login}
-          onSuccess={() => props.history.push('/portal')}
+          submitAction={loginUser}
+          onSuccess={() => props.history.replace('/portal')}
           title="log in to inline"
           buttonTitle="login"
           errorMessage="Error occured on login"

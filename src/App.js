@@ -1,20 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Helmet from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 import Home from './routes/home/Home';
+import Portal from './routes/portal/Portal';
+
+import { UserContext } from './contexts/UserContext';
 
 import initIcons from './icon';
 import './App.scss';
 
 
 function App() {
+  const { verifyUserAuth } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
+  const history = useHistory();
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const result = await verifyUserAuth();
+        if (result.ok && history.location.pathname === '/') {
+          history.replace('/portal');
+        } else if(!result.ok && history.location.pathname.includes('/portal')) {
+          history.replace('/');
+        }
+      } catch (e) {
+        history.replace('/');
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [history, verifyUserAuth]);
+
+  
   return (
     <div className="app">
       <Helmet defaultTitle="inline" />
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+      {!loading &&
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/portal" component={Portal} />
+            <Route component={() => <p>Not found</p>}/>
+          </Switch>
+        </main>
+      }      
     </div>
   );
 }

@@ -19,7 +19,8 @@ function Alert(props) {
   return (
     <Snackbar
       open={open}
-      autoHideDuration={3000}
+      autoHideDuration={4000}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       onClose={() => setOpen(false)}>
       <AlertUI severity={type}>
         {text}

@@ -73,6 +73,20 @@ async function logout() {
 }
 
 
+async function verifyAuth() {
+  let result;
+
+  try {
+    result = await get('/verify');
+  } catch (e) {
+    console.error(e)
+    throw new Error('Error verifying auth');
+  }
+
+  return result;
+}
+
+
 async function signup(data) {
   let result;
 
@@ -87,8 +101,24 @@ async function signup(data) {
 }
 
 
+async function getMe() {
+  let result;
+
+  try {
+    result = await get('/users/me');
+  } catch (e) {
+    console.error(e)
+    throw new Error('Error getting me');
+  }
+
+  return result;
+}
+
+
 export {
   login,
   logout,
   signup,
+  getMe,
+  verifyAuth,
 };
