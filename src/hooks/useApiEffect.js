@@ -24,7 +24,7 @@ export default function useApiEffect(apiCall, errorMessage, deps) {
           setData(result.data);
         } else if (result.status === status.UNAUTHORIZED) {
           resetUser();
-          history.replace('/');
+          return history.replace('/');
         }
       } catch (e) {
         setError(errorMessage);
