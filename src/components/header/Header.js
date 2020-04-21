@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ButtonText from '../buttonText/ButtonText';
+
 import logo from '../../img/logo_yellow.png';
 import './Header.scss';
 
@@ -22,9 +24,12 @@ function Header(props) {
       </Link>
       <ul className="header__actions">
         {actions.map((a) => (
-          <button className="header__action-container" key={a.title} onClick={a.handleClick}>
-            <li className="header__action">{a.title}</li>
-          </button>
+          <ButtonText
+            text={a.title}
+            handleClick={a.handleClick}
+            color="black"
+            key={a.title}
+          />
         ))}
       </ul>
     </header>

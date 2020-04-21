@@ -5,10 +5,11 @@ import {
   faUserFriends,
   faStoreAlt,
   faSignOutAlt,
-  faPrint,
   faTv,
 } from '@fortawesome/free-solid-svg-icons'
- 
+import {
+  faFileAlt,
+} from '@fortawesome/free-regular-svg-icons'
 
 export default function init() {
   library.add(
@@ -17,7 +18,7 @@ export default function init() {
     faUserFriends,
     faStoreAlt,
     faSignOutAlt,
-    faPrint,
-    faTv
+    faTv,
+    faFileAlt,
   );
 }

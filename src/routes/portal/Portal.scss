@@ -5,3 +5,36 @@
   display: flex;
   height: 100vh;
 }
+
+
+.portal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  width: 100%;
+  height: fit-content;
+  margin: 1.5rem 3rem;
+
+
+  &-company {
+    display: flex;
+    align-items: baseline;
+
+    &Name {
+      font-weight: normal;
+      font-size: $h;
+      margin-right: 0.5rem;
+    }
+
+    &Branch {
+      font-weight: normal;
+      font-size: $s;
+    }
+  }
+
+
+  &-buttons * {
+    font-size: $m;
+  }
+}

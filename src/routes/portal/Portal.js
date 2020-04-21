@@ -5,6 +5,7 @@ import Call from './call/Call';
 import Users from './users/Users';
 import Branches from './branches/Branches';
 
+import ButtonText from '../../components/buttonText/ButtonText';
 import Alert from '../../components/alert/Alert';
 import Navbar from '../../components/navbar/Navbar';
 
@@ -41,12 +42,31 @@ function Portal(props) {
           },
         ]}
       />
-      <p>{data.companyName}</p>
+      <div className="portal__header">
+        <div className="portal__header-company">
+          <h1 className="portal__header-companyName">{data.companyName}</h1>
+          <h2 className="portal__header-companyBranch">{data.branchName}</h2>
+        </div>
+        <div className="portal__header-buttons">
+          <ButtonText
+            text="tickets"
+            icon={['far', 'file-alt']}
+            handleClick={() => window.open(`${path}/tickets`, '_blank')}
+            color="yellow"
+          />
+          <ButtonText
+            text="display"
+            icon="tv"
+            handleClick={() => window.open(`${path}/display`, '_blank')}
+            color="yellow"
+          />
+        </div>
+      </div>
       <Switch>
         <Route exact path={`${path}/call`} component={Call} />
         <Route exact path={`${path}/users`} component={Users} />
         <Route exact path={`${path}/branches`} component={Branches} />
-        <Route component={Call} />
+        <Route component={null} />
       </Switch>
       <Alert
         type="error"

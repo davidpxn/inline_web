@@ -1,0 +1,51 @@
+@import "../../config.scss";
+
+
+.button-text {
+  margin: 0 0.5rem;
+  padding: 2px 14px 2px 5px;
+
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  transition: background-position 200ms ease-out;
+
+
+  &:hover {
+    background-position: left bottom;
+
+    & .button-text__content {
+      color: $white;
+    }
+  }
+
+
+  &--black {
+    background: linear-gradient(to right, $black 50%, transparent 0%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+
+  &--yellow {
+    background: linear-gradient(to right, $yellow 50%, transparent 0%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    font-size: $l;
+    font-weight: bold;
+    transition: color 200ms ease-out;
+  }
+
+
+  &__icon {
+    margin: 4px 0.5rem 4px 0;
+    font-size: $l !important;
+  }
+}
