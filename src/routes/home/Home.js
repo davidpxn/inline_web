@@ -6,7 +6,7 @@ import Modal from '../../components/modal/Modal';
 import Header from '../../components/header/Header';
 
 import { UserContext } from '../../contexts/UserContext';
-import mascot_lookup from '../../img/mascot_lookup.png';
+import mascot_lookleft from '../../img/mascot_lookleft.png';
 import './Home.scss';
 
 
@@ -16,7 +16,7 @@ function Home(props) {
   const [signupOpen, setSignupOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
-  
+
   return (
     <div className="home">
       <Header
@@ -26,18 +26,19 @@ function Home(props) {
         ]}
       />
       <div className="welcome">
-        <h1 className="welcome__heading">
-          welcome <br />
-          to <br />
-          inline <br />
-        </h1>
-        <h2 className="welcome__text">
-          Modern web-based <br />
-          queue management system <br />
-        </h2>
+        <div className="welcome__text">
+          <h1 className="welcome__heading">
+            <span>welcome <br /></span>
+            <span>to</span> <span>inline</span>
+          </h1>
+          <h2 className="welcome__subheading">
+            <span>Modern web-based <br /></span>
+            <span>queue management system </span>
+          </h2>
+        </div>
         <img
           className="welcome__img"
-          src={mascot_lookup}
+          src={mascot_lookleft}
           alt=""
         />
       </div>

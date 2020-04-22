@@ -3,34 +3,47 @@
 
 .button-text {
   margin: 0 0.5rem;
-  padding: 2px 14px 2px 5px;
+  padding: 2px 14px 2px 2px;
 
-  background-color: transparent;
   cursor: pointer;
   border: none;
-  transition: background-position 200ms ease-out;
-
-
-  &:hover {
-    background-position: left bottom;
-
-    & .button-text__content {
-      color: $white;
-    }
-  }
+  transition: background-position 200ms ease;
 
 
   &--black {
     background: linear-gradient(to right, $black 50%, transparent 0%);
-    background-size: 200% 100%;
+    background-size: 200% 50%;
     background-position: right bottom;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-position: left bottom;
+  
+      & .button-text__content {
+        color: $snow-blue;
+      }
+
+      & .button-text__icon {
+        fill: $snow-blue;
+      }
+    }
   }
 
 
-  &--yellow {
-    background: linear-gradient(to right, $yellow 50%, transparent 0%);
-    background-size: 200% 100%;
-    background-position: right bottom;
+  &--blue {
+    @include highlight(50%);
+
+    &:hover {
+      background-position: left bottom;
+  
+      & .button-text__content {
+        color: $classic-blue;
+      }
+
+      & .button-text__icon {
+        fill: $classic-blue;
+      }
+    }
   }
 
 
@@ -45,7 +58,8 @@
 
 
   &__icon {
+    height: 20px;
+    width: 20px;
     margin: 4px 0.5rem 4px 0;
-    font-size: $l !important;
   }
 }

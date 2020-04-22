@@ -7,59 +7,127 @@
   align-items: center;
 
   list-style: none;
-  background-color: $grey;
+  background-color: $white;
 
   height: 100%;
-  width: fit-content;
+  width: 70px;
 
 
   &__logo {
-    width: 3vw;
-    margin: 1rem 0;
-  }
-
-
-  &__tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-decoration: none;
-    color: $black;
-
-    padding: 1rem 0.5rem;
-    width: 100%;
-
-
-    &-container {
-      width: 100%;
-      
-      background: linear-gradient(to left, $white 50%, $grey 50%);
-      background-size: 200% 100%;
-      background-position: left bottom;
-      transition: background-position 200ms ease-in-out;
-
-      &:hover {
-        background-position: right bottom;
-      }
-    }
-
-
-    &-title {
-      font-size: $xs;
-      font-weight: 500;
-      margin-top: 0.5rem;
-    }
-
-
-    &--selected {
-      color: $red;
-    }
+    width: 15px;
+    margin: 2rem 0 1rem 0;
   }
 
 
   &__logout {
     margin-top: auto;
     cursor: pointer;
+
+    &__icon {
+      position: relative;
+      right: 0;
+      transition: right 200ms ease;
+
+      width: 20px;
+      height: 20px;
+    }
+
+    &__title {
+      font-size: $xs;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    &:hover {
+      color: $classic-blue;
+
+      & .navbar__logout__icon {
+        right: 9px;
+        fill: $classic-blue;
+      }
+    }
+  }
+}
+
+
+.navbar__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-decoration: none;
+  color: $black;
+
+  padding: 1rem 0;
+  width: 100%;    
+
+
+  &:hover {
+    & .navbar__tab__dot {
+      left: 30px;     
+    }
+
+    & .navbar__tab__title {
+      left: calc(50% + 12px); 
+      color: $classic-blue;    
+      background-position: left bottom;
+
+      padding-right: 0.5rem;
+      padding-left: 2px;
+    }
+
+    & .navbar__tab__icon {
+      fill: $classic-blue;
+    }
+  }
+
+
+  &__title {
+    @include highlight(60%);
+
+    font-size: $xs;
+    font-weight: 500;
+
+    position: relative;
+    left: 0;
+    transition: left 400ms ease, background-position 400ms ease;
+  
+
+    &-container {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+  }
+
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  
+    transition: fill 200ms ease;
+  }
+
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+  
+    margin-right: 0.5rem;
+    fill: $classic-blue;
+  
+    position: absolute;
+    left: -35px;
+  
+    transition: left 400ms ease;
+  }
+
+
+  &--selected {
+    color: $classic-blue;
+
+    & .navbar__tab__icon {
+      fill: $classic-blue;
+    }
   }
 }

@@ -4,6 +4,8 @@
 .portal {
   display: flex;
   height: 100vh;
+
+  background-color: $grey;
 }
 
 
@@ -14,7 +16,7 @@
   
   width: 100%;
   height: fit-content;
-  margin: 1.5rem 3rem;
+  margin: 2.2rem 3rem;
 
 
   &-company {

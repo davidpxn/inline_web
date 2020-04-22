@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './ButtonText.scss';
 
@@ -7,10 +6,10 @@ import './ButtonText.scss';
 function ButtonText(props) {
   const {
     text,
-    icon,
     handleClick,
-    color, // yellow or black
+    color, // blue or black
     className,
+    children,
   } = props;
 
 
@@ -19,10 +18,10 @@ function ButtonText(props) {
       className={`button-text button-text--${color} ${className}`}
       onClick={handleClick}
     >
-      <div className="button-text__content">
-        {icon && <FontAwesomeIcon icon={icon} className="button-text__icon"/>}
+      <span className="button-text__content">
+        {children}
         {text}
-      </div>
+      </span>
     </button>
   );
 }

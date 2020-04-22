@@ -7,7 +7,6 @@ import Portal from './routes/portal/Portal';
 
 import { UserContext } from './contexts/UserContext';
 
-import initIcons from './icon';
 import './App.scss';
 
 
@@ -54,5 +53,4 @@ function App() {
 }
 
 
-initIcons();
 export default App;

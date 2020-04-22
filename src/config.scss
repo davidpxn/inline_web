@@ -8,11 +8,14 @@ $num-col: 12;
 
 /* Colors */
 
-$yellow: #F2E63C;
-$red: #F23C57;
+$classic-blue: #3200FF;
+$aqua-blue: #A5B6FE;
+$sky-blue: #C5D2FF;
+$snow-blue: #D5DBFF;
 
-$black: #000000;
-$grey: #F1F3F2;
+$red: #F23C57;
+$black: #010527;
+$grey: #FAFAFA;
 $white: #ffffff;
 
 
@@ -35,6 +38,18 @@ $xg: 60px;
 $xxg: 90px;
 
 
+/* Animations */
+
+@keyframes spin-animation {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+
 /* Functions */
 
 @function columns($col: 1) {
@@ -44,8 +59,8 @@ $xxg: 90px;
 
 /* Mixins */
 
-@mixin autofill-style($yellow) {
-  @if $yellow {
+@mixin autofill-style($grey) {
+  @if $grey {
     & input:-webkit-autofill,
     input:-webkit-autofill:hover, 
     input:-webkit-autofill:focus,
@@ -56,7 +71,7 @@ $xxg: 90px;
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
       -webkit-text-fill-color: $black;
-      box-shadow: 0 0 0 30px #F2E63C inset !important;
+      box-shadow: 0 0 0 30px $grey inset !important;
     }
   } @else {
     & input:-webkit-autofill,
@@ -72,4 +87,19 @@ $xxg: 90px;
         box-shadow: 0 0 0 30px $white inset !important;
       }
   }
+}
+
+@mixin spin() {
+  animation: spin-animation 2000ms linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin highlight($height) {
+  /* The highlight will appear with: background-position: left bottom;
+     This can be used e.g on hover. */
+     
+  background: linear-gradient(to right, $snow-blue 50%, transparent 0%);
+  background-size: 200% $height;
+  background-position: right bottom;
+  background-repeat: no-repeat;
 }

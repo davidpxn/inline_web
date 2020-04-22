@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 
 import Field from '../../components/field/Field';
-import ButtonFancy from '../../components/buttonFancy/ButtonFancy';
 import Button from '../../components/button/Button';
 import Alert from '../../components/alert/Alert';
 
-import logo from '../../img/logo_white.png';
+import logo from '../../img/logo_black_on_white.png';
 import './Form.scss';
 
 
@@ -16,7 +15,6 @@ function Form(props) {
     submitAction,
     onSuccess,
     errorMessage,
-    buttonType,
     buttonTitle,
     className,
     showLogo,
@@ -95,22 +93,13 @@ function Form(props) {
           key={field.name}
         />
       ))}
-      {buttonType === 'fancy' ?
-        <ButtonFancy
-          text={buttonTitle}
-          offset="top"
-          color="white"
-          loading={loading}
-          className="form__button"
-        /> :
-        <Button
-          text={buttonTitle}
-          color="red"
-          loading={loading}
-          fill={true}
-          className="form__button"
-        />
-      }
+      <Button
+        text={buttonTitle}
+        color="red"
+        loading={loading}
+        fill={true}
+        className="form__button"
+      />
       <Alert
         type="error"
         text={alertMessage}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { ReactComponent as IconDash } from '../../svg/dash.svg';
 import './Button.scss';
 
 
@@ -8,7 +8,7 @@ function Button(props) {
   const {
     text,
     handleClick,
-    color, // red or black
+    color, // blue, red or black
     fill,
     loading,
     className,
@@ -20,7 +20,7 @@ function Button(props) {
       className={`button button--${color}${fill ? '--fill' : ''} ${className}`}
       onClick={handleClick}
     >
-      {loading ? <FontAwesomeIcon icon="slash" size="xs" spin /> : text}
+      {loading ? <IconDash className="button__loading"/> : text}
     </button>
   );
 }

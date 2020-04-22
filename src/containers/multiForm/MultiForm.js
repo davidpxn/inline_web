@@ -118,7 +118,7 @@ function MultiForm(props) {
       return (
         <Button
           text="back"
-          color="black"
+          color="blue"
           fill={false}
           handleClick={prev}
         />

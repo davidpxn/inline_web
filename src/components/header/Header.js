@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ButtonText from '../buttonText/ButtonText';
 
-import logo from '../../img/logo_yellow.png';
+import logo from '../../img/logo_black_on_white.png';
 import './Header.scss';
 
 
@@ -27,7 +27,7 @@ function Header(props) {
           <ButtonText
             text={a.title}
             handleClick={a.handleClick}
-            color="black"
+            color="blue"
             key={a.title}
           />
         ))}

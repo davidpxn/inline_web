@@ -74,4 +74,13 @@
       background-color: $black;
     }
   }
+
+  
+  &__loading {
+    @include spin();
+
+    fill: $white;
+    width: 20px;
+    height: 20px;
+  }
 }

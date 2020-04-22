@@ -12,6 +12,12 @@ import Navbar from '../../components/navbar/Navbar';
 import { UserContext } from '../../contexts/UserContext';
 import useApiEffect from '../../hooks/useApiEffect';
 
+import { ReactComponent as IconCaller } from '../../svg/caller.svg';
+import { ReactComponent as IconUsers } from '../../svg/users.svg';
+import { ReactComponent as IconBranch } from '../../svg/branch.svg';
+import { ReactComponent as IconTicket } from '../../svg/ticket.svg';
+import { ReactComponent as IconDisplay } from '../../svg/display.svg';
+
 import './Portal.scss';
 
 
@@ -28,17 +34,17 @@ function Portal(props) {
           {
             title: 'call',
             path: '/portal/call',
-            icon: 'headset',
+            icon: <IconCaller className="navbar__tab__icon"/>,
           },
           {
             title: 'users',
             path: '/portal/users',
-            icon: 'user-friends',
+            icon: <IconUsers className="navbar__tab__icon"/>,
           },
           {
             title: 'branches',
             path: '/portal/branches',
-            icon: 'store-alt',
+            icon: <IconBranch className="navbar__tab__icon"/>,
           },
         ]}
       />
@@ -52,14 +58,18 @@ function Portal(props) {
             text="tickets"
             icon={['far', 'file-alt']}
             handleClick={() => window.open(`${path}/tickets`, '_blank')}
-            color="yellow"
-          />
+            color="blue"
+          >
+            <IconTicket className="button-text__icon"/>
+          </ButtonText>
           <ButtonText
             text="display"
             icon="tv"
             handleClick={() => window.open(`${path}/display`, '_blank')}
-            color="yellow"
-          />
+            color="blue"
+          >
+            <IconDisplay className="button-text__icon"/>
+          </ButtonText>
         </div>
       </div>
       <Switch>

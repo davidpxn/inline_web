@@ -2,6 +2,9 @@
 
 
 .button {
+  display: flex;
+  align-items: center;
+
   font-size: $l;
   font-weight: bold;
   
@@ -21,8 +24,20 @@
   } 
 
 
+  &--blue {
+    border-color: $classic-blue;
+    color: $classic-blue;
+
+    &--fill {
+      background-color: $classic-blue;
+      color: $white;
+    }
+  }
+
+
   &--red {
     border-color: $red;
+    color: $red;
 
     &--fill {
       background-color: $red;
@@ -38,5 +53,14 @@
       background-color: $black;
       color: $white
     }
-  } 
+  }
+  
+  
+  &__loading {
+    @include spin();
+
+    fill: $white;
+    width: 20px;
+    height: 20px;
+  }
 }
