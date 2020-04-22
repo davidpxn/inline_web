@@ -88,10 +88,10 @@
     position: relative;
     top: 0;
     
-    transition: top 600ms ease-out;
+    transition: top 600ms ease;
     transform: translateY(15rem);
 
-    animation: logo-animation 6000ms ease-out;
+    animation: logo-animation 6000ms ease;
     animation-fill-mode: forwards;
 
     &:hover {

@@ -54,7 +54,7 @@
     height: 100%;
 
     position: absolute;
-    transition: top 300ms ease-out, right 300ms ease-out, left 300ms ease-out, bottom 300ms ease-out;
+    transition: top 300ms ease, right 300ms ease, left 300ms ease, bottom 300ms ease;
 
     &--top {
       bottom: 6px;
