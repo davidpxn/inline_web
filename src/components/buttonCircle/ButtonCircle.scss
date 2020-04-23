@@ -1,0 +1,14 @@
+@import "../../config.scss";
+
+
+.button-circle {
+  background-color: $snow-blue;
+  font-size: $g;
+  border-radius: 100vw;
+
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background-color: $sky-blue;
+  }
+}

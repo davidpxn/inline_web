@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Call from './call/Call';
 import Users from './users/Users';
 import Branches from './branches/Branches';
+import Tickets from './tickets/Tickets';
 
 import ButtonText from '../../components/buttonText/ButtonText';
 import Alert from '../../components/alert/Alert';
@@ -25,6 +26,14 @@ function Portal(props) {
   const path = props.match.path;
   const { getUser } = useContext(UserContext);
   const { data, loading, error } = useApiEffect(getUser, "Error while loading the portal", []);
+
+
+  switch (props.history.location.pathname) {
+    case '/portal/tickets':
+      return <Tickets/>;
+    default:
+      break;
+  }
 
 
   return (
