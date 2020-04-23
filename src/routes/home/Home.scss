@@ -51,6 +51,11 @@
         animation-delay: 1200ms;
         color: $black;
       }
+
+      &:nth-child(4) {
+        animation-delay: 1400ms;
+        color: $black;
+      }
     }
   }
 

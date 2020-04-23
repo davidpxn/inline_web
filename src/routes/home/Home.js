@@ -28,8 +28,8 @@ function Home(props) {
       <div className="welcome">
         <div className="welcome__text">
           <h1 className="welcome__heading">
-            <span>welcome <br /></span>
-            <span>to</span> <span>inline</span>
+            <span>welcome<br /></span>
+            <span>to</span> <span>inline</span> <span>.</span>
           </h1>
           <h2 className="welcome__subheading">
             <span>Modern web-based <br /></span>
