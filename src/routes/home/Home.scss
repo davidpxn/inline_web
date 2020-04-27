@@ -41,19 +41,19 @@
 
       animation: heading-animation 1500ms ease;
       animation-fill-mode: forwards;
-      animation-delay: 800ms;
+      animation-delay: 1400ms;
 
       &:nth-child(2) {
-        animation-delay: 1000ms;
+        animation-delay: 1600ms;
       }
   
       &:nth-child(3) {
-        animation-delay: 1200ms;
+        animation-delay: 1800ms;
         color: $black;
       }
 
       &:nth-child(4) {
-        animation-delay: 1400ms;
+        animation-delay: 2000ms;
         color: $black;
       }
     }
@@ -74,13 +74,13 @@
 
       &:first-child {
         animation: subheading1-animation 1500ms ease;
-        animation-delay: 2000ms;
+        animation-delay: 2600ms;
         animation-fill-mode: forwards;
       }
   
       &:last-child {
         animation: subheading2-animation 1500ms ease;
-        animation-delay: 3200ms;
+        animation-delay: 3800ms;
         animation-fill-mode: forwards;
       }
     }
@@ -96,7 +96,7 @@
     transition: top 600ms ease;
     transform: translateY(15rem);
 
-    animation: logo-animation 6000ms ease;
+    animation: logo-animation 7000ms ease;
     animation-fill-mode: forwards;
 
     &:hover {
@@ -130,7 +130,7 @@
   0% {
     transform: translateY(15rem);
   }
-  15% {
+  20% {
     transform: translateY(4rem);
   }
   80% {
