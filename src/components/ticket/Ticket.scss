@@ -1,0 +1,28 @@
+@import "../../config.scss";
+
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+  width: fit-content;
+  margin: 2rem 3rem;
+
+
+  &__number {
+    margin: 1rem 0;
+    
+    font-size: $xxg;
+    font-weight: bold;
+    color: $classic-blue;
+  }
+
+
+  &__text {
+    font-size: $h;
+    font-weight: 500;
+  }
+}

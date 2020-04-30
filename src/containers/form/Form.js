@@ -22,6 +22,7 @@ function Form(props) {
 
   const [data, setData] = useState(initData(fields));
   const [errors, setErrors] = useState(initData(fields));
+  const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -47,7 +48,6 @@ function Form(props) {
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
-    setAlertMessage(null);
 
     let result = {};
     try {
@@ -62,6 +62,7 @@ function Form(props) {
       }
     } catch (e) {
       setAlertMessage(errorMessage);
+      setShowAlert(true);
     }
 
     setLoading(false);
@@ -103,6 +104,9 @@ function Form(props) {
       <Alert
         type="error"
         text={alertMessage}
+        center={true}
+        open={showAlert}
+        onClose={() => setShowAlert(false)}
       />
     </form>
   );

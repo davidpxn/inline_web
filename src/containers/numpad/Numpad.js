@@ -4,10 +4,11 @@ import ButtonCircle from '../../components/buttonCircle/ButtonCircle';
 
 import { ReactComponent as IconBack } from '../../svg/back.svg';
 import { ReactComponent as IconCheck } from '../../svg/check.svg';
+import { ReactComponent as IconDash } from '../../svg/dash.svg';
 import './Numpad.scss';
 
 
-function Numpad() {
+function Numpad(props) {
   const [value, setValue] = useState('');
 
 
@@ -38,6 +39,11 @@ function Numpad() {
 
       return prevValue.slice(0, -1); ;
     });
+  }
+
+  function handleAction() {
+    const data = value.replace(/-|\s/g, '');
+    props.action(data, () => setValue(''));
   }
 
 
@@ -105,7 +111,10 @@ function Numpad() {
           handleClick={handleButtons}
         />
         <button className="numpad__icon-container">
-          <IconCheck className="numpad__icon numpad__icon--check" />
+          {props.loading ?
+            <IconDash className="numpad__icon numpad__icon--loading" /> :
+            <IconCheck className="numpad__icon numpad__icon--check" onClick={handleAction}/>
+          }
         </button>
       </div>
     </div >

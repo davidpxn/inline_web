@@ -52,6 +52,11 @@
       fill: $classic-blue;
     }
 
+    &--loading {
+      @include spin();
+      fill: $classic-blue;
+    }
+
     &:hover {
       width: 38px;
       height: 38px;

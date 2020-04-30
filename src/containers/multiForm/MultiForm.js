@@ -20,6 +20,7 @@ function MultiForm(props) {
   const [data, setData] = useState(initData(categories));
   const [errors, setErrors] = useState(initData(categories));
   const [alertMessage, setAlertMessage] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
   const [loading, setLoading] = useState(false);
 
 
@@ -52,7 +53,6 @@ function MultiForm(props) {
 
   async function handleSubmit() {
     setLoading(true);
-    setAlertMessage(null);
 
     let result = {};
     try {
@@ -86,6 +86,7 @@ function MultiForm(props) {
       }
     } catch (e) {
       setAlertMessage(errorMessage);
+      setShowAlert(true);
     }
 
     setLoading(false);
@@ -179,6 +180,9 @@ function MultiForm(props) {
       <Alert
         type="error"
         text={alertMessage}
+        center={true}
+        open={showAlert}
+        onClose={() => setShowAlert(false)}
       />
     </div>
 

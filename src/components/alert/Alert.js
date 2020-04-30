@@ -7,21 +7,18 @@ function Alert(props) {
   const {
     type,
     text,
+    center, // By default, the alert box will be in the bottom right
+    open,
+    onClose,
   } = props;
-
-  const [open, setOpen] = useState(text ? true : false);
-
-  useEffect(() => {
-    setOpen(text ? true : false);
-  }, [text]);
 
 
   return (
     <Snackbar
       open={open}
       autoHideDuration={4000}
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      onClose={() => setOpen(false)}>
+      anchorOrigin={center ? { vertical: 'bottom', horizontal: 'center' } : { vertical: 'bottom', horizontal: 'right' }}
+      onClose={onClose}>
       <AlertUI severity={type}>
         {text}
       </AlertUI>

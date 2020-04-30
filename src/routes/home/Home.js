@@ -18,7 +18,7 @@ function Home(props) {
 
 
   return (
-    <div className="home">
+    <div className="home" id="home">
       <Header
         actions={[
           { title: "login", handleClick: () => setLoginOpen(true) },
@@ -42,7 +42,12 @@ function Home(props) {
           alt=""
         />
       </div>
-      <Modal open={signupOpen} onClose={() => setSignupOpen(false)}>
+      <Modal
+        title="Signup"
+        open={signupOpen}
+        onClose={() => setSignupOpen(false)}
+        parentID="home"
+      >
         <MultiForm
           submitAction={signupUser}
           onSuccess={() => props.history.replace('/portal')}
@@ -78,7 +83,12 @@ function Home(props) {
           ]}
         />
       </Modal>
-      <Modal open={loginOpen} onClose={() => setLoginOpen(false)}>
+      <Modal
+        title="Login"
+        open={loginOpen}
+        onClose={() => setLoginOpen(false)}
+        parentID="home"
+      >
         <Form
           submitAction={loginUser}
           onSuccess={() => props.history.replace('/portal')}

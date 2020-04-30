@@ -25,7 +25,7 @@ import './Portal.scss';
 function Portal(props) {
   const path = props.match.path;
   const { getUser } = useContext(UserContext);
-  const { data, loading, error } = useApiEffect(getUser, "Error while loading the portal", []);
+  const { data, loading, error, showAlert, setShowAlert } = useApiEffect(getUser, "Error while loading the portal", []);
 
 
   switch (props.history.location.pathname) {
@@ -90,6 +90,8 @@ function Portal(props) {
       <Alert
         type="error"
         text={error}
+        open={showAlert}
+        onClose={() => setShowAlert(false)}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
-const status = require('http-status-codes');
+import status from 'http-status-codes';
 
 
 export default function useApiEffect(apiCall, errorMessage, deps) {
@@ -11,12 +11,12 @@ export default function useApiEffect(apiCall, errorMessage, deps) {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
 
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      setError('');
 
       try {
         const result = await apiCall();
@@ -28,6 +28,7 @@ export default function useApiEffect(apiCall, errorMessage, deps) {
         }
       } catch (e) {
         setError(errorMessage);
+        setShowAlert(true);
       }
 
       setLoading(false);
@@ -37,5 +38,5 @@ export default function useApiEffect(apiCall, errorMessage, deps) {
   }, deps);
 
 
-  return { data, loading, error };
+  return { data, loading, error, showAlert, setShowAlert };
 }
