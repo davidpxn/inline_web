@@ -7,6 +7,17 @@ function emitGetTicket(socket, phone, callback) {
 }
 
 
+function listenNewCall(callback) {
+  const event = '/ticket/sNewCall';
+
+  return {
+    event,
+    callback,
+  };
+}
+
+
 export {
   emitGetTicket,
+  listenNewCall,
 };

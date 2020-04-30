@@ -5,6 +5,7 @@ import Call from './call/Call';
 import Users from './users/Users';
 import Branches from './branches/Branches';
 import Tickets from './tickets/Tickets';
+import Display from './display/Display';
 
 import ButtonText from '../../components/buttonText/ButtonText';
 import Alert from '../../components/alert/Alert';
@@ -30,7 +31,9 @@ function Portal(props) {
 
   switch (props.history.location.pathname) {
     case '/portal/tickets':
-      return <Tickets/>;
+      return <Tickets />;
+      case '/portal/display':
+        return <Display/>;
     default:
       break;
   }

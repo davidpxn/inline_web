@@ -26,7 +26,7 @@ function Modal(props) {
     <ReactModal
       isOpen={open}
       onRequestClose={handleClose}
-      onAfterOpen={() => timeout = setTimeout(() => handleClose(), autoHideDuration)}
+      onAfterOpen={autoHideDuration ? () => timeout = setTimeout(() => handleClose(), autoHideDuration) : null}
       contentLabel={title}
       parentSelector={() => document.querySelector(`#${parentID}`)}
       closeTimeoutMS={200}

@@ -6,13 +6,14 @@ import io from 'socket.io-client';
 const url = process.env.REACT_APP_API_URL;
 
 
-export default function useSocket(deps) {
+export default function useSocket(deps, eventListeners) {
   const history = useHistory();
   const socket = useRef(null);
   const { resetUser } = useContext(UserContext);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [branchData, setBranchData] = useState({});
 
 
   useEffect(() => {
@@ -21,17 +22,24 @@ export default function useSocket(deps) {
     socket.current = io(url);
     socket.current.on('connect', () => {
       console.info('Connected to socket');
-      setLoading(false);
     });
 
     socket.current.on('error', (error) => {
       console.error(error);
-      setLoading(false);
-      setError('Please log in again')
-
       resetUser();
       history.replace('/');
     });
+
+    socket.current.on('initial', (initialData) => {
+      setBranchData(initialData);
+      setLoading(false);
+    });
+
+    if (eventListeners) {
+      for (const listener of eventListeners) {
+        socket.current.on(listener.event, listener.callback);
+      }
+    }
   }, deps);
 
 
@@ -41,5 +49,7 @@ export default function useSocket(deps) {
     setLoading,
     error,
     setError,
+    branchData,
+    setBranchData
   };
 }

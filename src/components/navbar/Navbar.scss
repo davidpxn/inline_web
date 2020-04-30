@@ -64,7 +64,7 @@
 
   &:hover {
     & .navbar__tab__dot {
-      left: 30px;     
+      left: 31px;     
     }
 
     & .navbar__tab__title {
@@ -110,8 +110,8 @@
 
 
   &__dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   
     margin-right: 0.5rem;
     fill: $classic-blue;
