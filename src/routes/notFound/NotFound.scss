@@ -1,0 +1,61 @@
+@import "../../config.scss";
+
+
+.not-found {
+  height: 100vh;
+  padding: 0 columns(1);
+  padding-top: 4rem;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  &__mascot {
+    @include spin(20000ms);
+
+    width: 12vw;
+
+    &-container {
+      @include spin(40000ms);
+      $size: 20vw;
+
+      width: $size*2;
+      height: $size;
+      position: absolute;
+      left: calc(50% - #{$size}/2);
+      top: calc(50% - #{$size}/2);
+      margin: 0 auto;
+    }
+  }
+
+
+  &__404 {
+    color: $white;
+    font-size: 30vh;
+    z-index: 1;
+  }
+
+
+  &__message {
+    margin-top: 1rem;
+    z-index: 1;
+
+    color: $white;
+    font-size: 6vh;
+    font-weight: 500;
+  }
+
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  &__logo {
+    height: 50px;
+    cursor: pointer;
+  }
+}

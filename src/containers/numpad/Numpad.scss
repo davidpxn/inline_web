@@ -53,7 +53,7 @@
     }
 
     &--loading {
-      @include spin();
+      @include spin(2000ms);
       fill: $classic-blue;
     }
 

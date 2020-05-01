@@ -4,6 +4,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 
 import Home from './routes/home/Home';
 import Portal from './routes/portal/Portal';
+import NotFound from './routes/notFound/NotFound';
 
 import { UserContext } from './contexts/UserContext';
 
@@ -44,7 +45,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/portal" component={Portal} />
-            <Route component={() => <p>Not found</p>}/>
+            <Route component={NotFound}/>
           </Switch>
         </main>
       }      

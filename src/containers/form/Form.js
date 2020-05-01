@@ -4,7 +4,7 @@ import Field from '../../components/field/Field';
 import Button from '../../components/button/Button';
 import Alert from '../../components/alert/Alert';
 
-import logo from '../../img/logo_black_on_white.png';
+import logo from '../../img/logo_black.png';
 import './Form.scss';
 
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ButtonText from '../buttonText/ButtonText';
 
-import logo from '../../img/logo_black_on_white.png';
+import logo from '../../img/logo_black.png';
 import './Header.scss';
 
 
@@ -23,7 +23,7 @@ function Header(props) {
         />
       </Link>
       <ul className="header__actions">
-        {actions.map((a) => (
+        {actions && actions.map((a) => (
           <ButtonText
             text={a.title}
             handleClick={a.handleClick}

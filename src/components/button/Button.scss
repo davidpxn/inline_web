@@ -54,7 +54,7 @@
   
   
   &__loading {
-    @include spin();
+    @include spin(2000ms);
 
     fill: $white;
     width: 20px;

@@ -89,8 +89,8 @@ $xxg: 90px;
   }
 }
 
-@mixin spin() {
-  animation: spin-animation 2000ms linear;
+@mixin spin($duration) {
+  animation: spin-animation $duration linear;
   animation-iteration-count: infinite;
 }
 

@@ -4,7 +4,7 @@ import { NavLink, Link, useHistory } from 'react-router-dom';
 import useApi from '../../hooks/useApi';
 import { UserContext } from '../../contexts/UserContext';
 
-import logo from '../../img/logo_black_on_white.png';
+import logo from '../../img/logo_black.png';
 import { ReactComponent as IconLogout } from '../../svg/logout.svg';
 import { ReactComponent as IconDot } from '../../svg/dot.svg';
 import './Navbar.scss';
