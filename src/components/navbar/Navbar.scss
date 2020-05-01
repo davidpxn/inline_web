@@ -39,11 +39,13 @@
     }
 
     &:hover {
-      color: $classic-blue;
-
       & .navbar__logout__icon {
         right: 9px;
         fill: $classic-blue;
+      }
+
+      & .navbar__logout__title {
+        color: $classic-blue;
       }
     }
   }

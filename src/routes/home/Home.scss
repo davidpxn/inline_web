@@ -32,12 +32,12 @@
   &__heading {
     font-size: $xxg;
     font-weight: bold;
-    color: $classic-blue;
     line-height: 1;
 
     & > span {
       opacity: 0;
       position: relative;
+      color: $classic-blue;
 
       animation: heading-animation 1500ms ease;
       animation-fill-mode: forwards;

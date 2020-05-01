@@ -1,0 +1,34 @@
+@import "../../config.scss";
+
+
+.fullscreen-button {
+  width: 24px;
+  height: 24px;
+  transition: width 200ms ease, height 200ms ease;
+  
+
+  &:hover {
+    width: 28px;
+    height: 28px;
+  }
+
+
+  &-container {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+
+    width: 28px;
+    height: 28px;
+  }
+
+
+  &--black {
+    fill: $black;
+  }
+
+  
+  &--white {
+    fill: $white;
+  }
+}

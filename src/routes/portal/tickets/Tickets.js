@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import Fullscreen from "react-full-screen";
 import status from 'http-status-codes';
 
 import { UserContext } from '../../../contexts/UserContext';
@@ -10,13 +9,12 @@ import Numpad from '../../../containers/numpad/Numpad';
 import Alert from '../../../components/alert/Alert';
 import Modal from '../../../components/modal/Modal';
 import Ticket from '../../../components/ticket/Ticket';
+import Fullscreen from '../../../components/fullscreen/Fullscreen';
 
-import { ReactComponent as IconFullscreen } from '../../../svg/fullscreen.svg';
 import './Tickets.scss';
 
 
 function Tickets() {
-  const [fullscreen, setFullscreen] = useState(false);
   const [showTicket, setShowTicket] = useState(false);
   const [ticketNumber, setTicketNumber] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
@@ -37,7 +35,7 @@ function Tickets() {
       setShowAlert(true);
       return;
     }
-    
+
     setLoading(true);
 
     emitGetTicket(socket, phone, (result) => {
@@ -55,24 +53,14 @@ function Tickets() {
     });
   }
 
-  
+
   return (
-    <Fullscreen
-      enabled={fullscreen}
-      onChange={fullscreen => setFullscreen(fullscreen)}
-    >
+    <Fullscreen color="black">
       <div className="tickets" id="tickets">
-        <header className="tickets__header">
-          <div className="tickets__company">
-            <h1 className="tickets__company__name">{user.companyName}</h1>
-            <h2 className="tickets__company__branch">{user.branchName}</h2>
-          </div>
-          {!fullscreen &&
-            <button className="tickets__fullscreen-container">
-              <IconFullscreen className="tickets__fullscreen" onClick={() => setFullscreen(true)} />
-            </button>
-          }
-        </header>
+        <div className="tickets__company">
+          <h1 className="tickets__company__name">{user.companyName}</h1>
+          <h2 className="tickets__company__branch">{user.branchName}</h2>
+        </div>
         <Numpad
           action={getTicket}
           loading={loading}
@@ -85,7 +73,7 @@ function Tickets() {
         autoHideDuration={5000}
         parentID="tickets"
       >
-        <Ticket number={ticketNumber}/>
+        <Ticket number={ticketNumber} />
       </Modal>
       <Alert
         type="info"
