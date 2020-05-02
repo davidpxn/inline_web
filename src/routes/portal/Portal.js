@@ -32,8 +32,8 @@ function Portal(props) {
   switch (props.history.location.pathname) {
     case '/portal/tickets':
       return <Tickets />;
-      case '/portal/display':
-        return <Display/>;
+    case '/portal/display':
+      return <Display />;
     default:
       break;
   }
@@ -46,50 +46,53 @@ function Portal(props) {
           {
             title: 'call',
             path: '/portal/call',
-            icon: <IconCaller className="navbar__tab__icon"/>,
+            icon: <IconCaller className="navbar__tab__icon" />,
           },
           {
             title: 'users',
             path: '/portal/users',
-            icon: <IconUsers className="navbar__tab__icon"/>,
+            icon: <IconUsers className="navbar__tab__icon" />,
           },
           {
             title: 'branches',
             path: '/portal/branches',
-            icon: <IconBranch className="navbar__tab__icon"/>,
+            icon: <IconBranch className="navbar__tab__icon" />,
           },
         ]}
       />
-      <div className="portal__header">
-        <div className="portal__header-company">
-          <h1 className="portal__header-companyName">{data.companyName}</h1>
-          <h2 className="portal__header-companyBranch">{data.branchName}</h2>
+      <div className="portal__content">
+        <div className="portal__header">
+          <div className="portal__header-company">
+            <h1 className="portal__header-companyName">{data.companyName}</h1>
+            <h2 className="portal__header-companyBranch">{data.branchName}</h2>
+          </div>
+          <div className="portal__header-buttons">
+            <ButtonText
+              text="tickets"
+              icon={['far', 'file-alt']}
+              handleClick={() => window.open(`${path}/tickets`, '_blank')}
+              color="blue"
+            >
+              <IconTicket className="button-text__icon" />
+            </ButtonText>
+            <ButtonText
+              text="display"
+              icon="tv"
+              handleClick={() => window.open(`${path}/display`, '_blank')}
+              color="blue"
+            >
+              <IconDisplay className="button-text__icon" />
+            </ButtonText>
+          </div>
         </div>
-        <div className="portal__header-buttons">
-          <ButtonText
-            text="tickets"
-            icon={['far', 'file-alt']}
-            handleClick={() => window.open(`${path}/tickets`, '_blank')}
-            color="blue"
-          >
-            <IconTicket className="button-text__icon"/>
-          </ButtonText>
-          <ButtonText
-            text="display"
-            icon="tv"
-            handleClick={() => window.open(`${path}/display`, '_blank')}
-            color="blue"
-          >
-            <IconDisplay className="button-text__icon"/>
-          </ButtonText>
-        </div>
+        <Switch>
+          <Route exact path={`${path}/call`} component={Call} />
+          <Route exact path={`${path}/users`} component={Users} />
+          <Route exact path={`${path}/branches`} component={Branches} />
+          <Route component={null} />
+        </Switch>
       </div>
-      <Switch>
-        <Route exact path={`${path}/call`} component={Call} />
-        <Route exact path={`${path}/users`} component={Users} />
-        <Route exact path={`${path}/branches`} component={Branches} />
-        <Route component={null} />
-      </Switch>
+
       <Alert
         type="error"
         text={error}

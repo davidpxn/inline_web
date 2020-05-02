@@ -1,0 +1,59 @@
+@import "../../config.scss";
+
+
+.button-call {
+  position: relative;
+  transition: box-shadow 300ms ease;
+
+
+  &__text {
+    font-size: $l;
+    font-weight: 500;
+    color: $white;
+
+    position: absolute;
+    top: 0.4rem;
+    left: 0;
+    right: 0;
+  }
+
+
+  &__subtext {
+    font-size: $m;
+    font-weight: 500;
+    color: $white;
+
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.4rem;
+
+  }
+
+
+  &__icon {
+    display: flex;
+    border: 4px solid $white;
+    border-radius: 100vw;
+
+    width: 4vw;
+    height: 4vw;
+    margin: auto;
+
+    & svg {
+      width: 2vw;
+      height: 2vw;
+      fill: white;
+      margin: auto;
+    }
+  }
+
+
+  &__loading {
+    @include spin(2000ms);
+  }
+
+
+  &:hover {
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.2);
+  }
+}

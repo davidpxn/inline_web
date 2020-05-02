@@ -1,0 +1,10 @@
+@import "../../config.scss";
+
+
+.caller {
+  $cell-size: 11vw;
+
+  display: grid;
+  grid-template-columns: $cell-size*1.8 $cell-size $cell-size*1.8 $cell-size $cell-size;
+  grid-template-rows: $cell-size $cell-size;
+}
