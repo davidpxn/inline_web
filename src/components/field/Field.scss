@@ -11,11 +11,11 @@
   
   &:focus-within {
     .field__label {
-      color: $red;
+      color: $classic-blue;
     }
 
     .field__input {
-      border-color: $red;
+      border-color: $classic-blue;
     }
   }
 

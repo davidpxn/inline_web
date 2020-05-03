@@ -1,0 +1,29 @@
+@import "../../config.scss";
+
+
+.button-icon {
+  border-radius: 50px;
+  transition: background-color 200ms ease, border-color 200ms ease;
+  border: 1px solid transparent;
+
+  width: 32px;
+  height: 32px;
+  margin: 0 4px;
+
+
+  & svg {
+    transition: fill 200ms ease;
+    width: 16px;
+    height: 16px;
+  }
+  
+
+  &:hover {
+    background-color: $snow-blue;
+    border-color: $classic-blue;
+
+    & > svg {
+      fill: $classic-blue;
+    }
+  }
+}

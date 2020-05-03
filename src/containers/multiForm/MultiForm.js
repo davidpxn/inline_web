@@ -119,7 +119,7 @@ function MultiForm(props) {
       return (
         <Button
           text="back"
-          color="blue"
+          color="black"
           fill={false}
           handleClick={prev}
         />
@@ -135,7 +135,7 @@ function MultiForm(props) {
       return (
         <Button
           text="next"
-          color="red"
+          color="blue"
           fill={true}
           handleClick={next}
         />
@@ -144,7 +144,7 @@ function MultiForm(props) {
       return (
         <Button
           text="finish"
-          color="red"
+          color="blue"
           fill={true}
           handleClick={handleSubmit}
           loading={loading}

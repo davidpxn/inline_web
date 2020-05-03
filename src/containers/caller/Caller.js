@@ -16,12 +16,12 @@ function Caller() {
       <TextboxCall
         title="next ticket"
         text="002"
-        color="#BDBDBD"
+        color="#adadad"
       />
       <ButtonCall
         text="next"
         icon={<IconNext />}
-        color="#0099E5"
+        color="#4569e0"
         loading={false}
         handleClick={null}
       />
@@ -29,14 +29,14 @@ function Caller() {
         title="current ticket"
         text="002"
         subtext="00:06:24"
-        color="#010527"
+        color="#000000"
         textColor="#ffffff"
       />
       <ButtonCall
         text="done"
         subtext="4"
         icon={<IconDone />}
-        color="#34BF49"
+        color="#44b842"
         loading={false}
         handleClick={null}
       />
@@ -44,14 +44,14 @@ function Caller() {
         text="skip"
         subtext="3"
         icon={<IconSkip />}
-        color="#FF4C4C"
+        color="#e84b45"
         loading={false}
         handleClick={null}
       />
       <TextboxCall
         title="waiting"
         text="6"
-        color="#E9E9E9"
+        color="#dbdbdb"
       />
     </div>
   );

@@ -3,20 +3,13 @@
 
 .portal {
   display: flex;
+  flex-direction: column;
   height: 100vh;
+  background-color: $snow-white;
 
-  background-color: $grey;
-
-
-  &__content {
+  &__body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    & > *:nth-child(2) {
-      margin: auto;
-    }
+    flex: 1;
   }
 }
 
@@ -28,26 +21,36 @@
   
   width: 100%;
   height: fit-content;
-  padding: 2.2rem 3rem;
+  padding: 0.5rem calc(1rem + 3px);
+
+  background-color: $white;
+  box-shadow: 0 4px 15px 0 rgba(0,0,0,0.05);
+  z-index: 1;
+
+
+  &-logo {
+    width: 12px;
+  }
+
 
   &-company {
     display: flex;
+    justify-content: center;
     align-items: baseline;
 
+    position: absolute;
+    right: 20vw;
+    left: 20vw;
+
     &Name {
-      font-weight: normal;
-      font-size: $h;
+      font-weight: 500;
+      font-size: $m;
       margin-right: 0.5rem;
     }
 
     &Branch {
-      font-weight: normal;
-      font-size: $s;
+      font-weight: 500;
+      font-size: $xs;
     }
-  }
-
-
-  &-buttons * {
-    font-size: $m;
   }
 }

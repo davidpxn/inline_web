@@ -5,7 +5,7 @@ import './Users.scss';
 
 function Users() {
   return (
-    <p>Users</p>
+    null
   );
 }
 

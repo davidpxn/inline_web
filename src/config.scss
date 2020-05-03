@@ -12,6 +12,7 @@ $classic-blue: #3200FF;
 $aqua-blue: #A5B6FE;
 $sky-blue: #C5D2FF;
 $snow-blue: #D5DBFF;
+$snow-white: #F3F5F9;
 
 $red: #FF1F58;
 $black: #010527;
@@ -26,6 +27,7 @@ $font-main: Montserrat, Helvetica, Arial, sans-serif;
 
 /* Font sizes */
 
+$xxs: 10px;
 $xs: 12px;
 $s: 14px;
 $m: 16px;
@@ -94,11 +96,11 @@ $xxg: 90px;
   animation-iteration-count: infinite;
 }
 
-@mixin highlight($height) {
+@mixin highlight($height, $color: $snow-blue) {
   /* The highlight will appear with: background-position: left bottom;
      This can be used e.g on hover. */
      
-  background: linear-gradient(to right, $snow-blue 50%, transparent 0%);
+  background: linear-gradient(to right, $color 50%, transparent 0%);
   background-size: 200% $height;
   background-position: right bottom;
   background-repeat: no-repeat;

@@ -96,7 +96,7 @@ function Form(props) {
       ))}
       <Button
         text={buttonTitle}
-        color="red"
+        color="blue"
         loading={loading}
         fill={true}
         className="form__button"

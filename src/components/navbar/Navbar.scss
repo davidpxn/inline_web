@@ -4,81 +4,52 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   list-style: none;
   background-color: $white;
+  box-shadow: 2px 0 15px 0 rgba(0,0,0,0.05);
 
   height: 100%;
-  width: 70px;
+  width: 150px;
 
+  padding: 0.5rem 0;
 
-  &__logo {
-    width: 15px;
-    margin: 2rem 0 1rem 0;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
-
-
-  &__logout {
+  
+  & li:last-child {
     margin-top: auto;
-    cursor: pointer;
-
-    &__icon {
-      position: relative;
-      right: 0;
-      transition: right 200ms ease;
-
-      width: 20px;
-      height: 20px;
-    }
-
-    &__title {
-      font-size: $xs;
-      font-weight: 500;
-      margin-top: 0.5rem;
-    }
-
-    &:hover {
-      & .navbar__logout__icon {
-        right: 9px;
-        fill: $classic-blue;
-      }
-
-      & .navbar__logout__title {
-        color: $classic-blue;
-      }
-    }
   }
 }
 
 
 .navbar__tab {
   display: flex;
-  flex-direction: column;
   align-items: center;
 
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  margin: 0.5rem 0;
+
   text-decoration: none;
-  color: $black;
+  cursor: pointer;
 
-  padding: 1rem 0;
-  width: 100%;    
+  border-left: 3px solid transparent;
+  transition: border-color 300ms ease;
 
-
+  
   &:hover {
-    & .navbar__tab__dot {
-      left: 31px;     
-    }
+    border-color: $aqua-blue;
 
     & .navbar__tab__title {
-      left: calc(50% + 12px); 
       color: $classic-blue;    
       background-position: left bottom;
-
-      padding-right: 0.5rem;
-      padding-left: 2px;
     }
 
-    & .navbar__tab__icon {
+    & svg {
       fill: $classic-blue;
     }
   }
@@ -90,45 +61,27 @@
     font-size: $xs;
     font-weight: 500;
 
-    position: relative;
-    left: 0;
-    transition: left 400ms ease, background-position 400ms ease;
-  
+    padding-right: 0.5rem;
+    padding-left: 2px;
+    margin-left: 0.5rem;
 
-    &-container {
-      display: flex;
-      align-items: center;
-      margin-top: 0.5rem;
-    }
+    transition: background-position 300ms ease, color 200ms ease;
   }
 
 
-  &__icon {
-    width: 20px;
-    height: 20px;
+  & svg {
+    width: 16px;
+    height: 16px;
   
     transition: fill 200ms ease;
   }
 
 
-  &__dot {
-    width: 8px;
-    height: 8px;
-  
-    margin-right: 0.5rem;
-    fill: $classic-blue;
-  
-    position: absolute;
-    left: -35px;
-  
-    transition: left 400ms ease;
-  }
-
-
   &--selected {
     color: $classic-blue;
+    border-color: $aqua-blue;
 
-    & .navbar__tab__icon {
+    & svg {
       fill: $classic-blue;
     }
 

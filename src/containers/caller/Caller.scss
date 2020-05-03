@@ -2,9 +2,10 @@
 
 
 .caller {
-  $cell-size: 11vw;
+  $cell-size: 10vw;
 
   display: grid;
   grid-template-columns: $cell-size*1.8 $cell-size $cell-size*1.8 $cell-size $cell-size;
   grid-template-rows: $cell-size $cell-size;
+  grid-gap: 0.5rem;
 }

@@ -1,12 +1,10 @@
 import React, { useContext } from 'react';
-import { NavLink, Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 import useApi from '../../hooks/useApi';
 import { UserContext } from '../../contexts/UserContext';
 
-import logo from '../../img/logo_black.png';
 import { ReactComponent as IconLogout } from '../../svg/logout.svg';
-import { ReactComponent as IconDot } from '../../svg/dot.svg';
 import './Navbar.scss';
 
 
@@ -18,7 +16,7 @@ function Navbar(props) {
 
   async function handleLogout() {
     const result = await fetchData();
-    
+
     if (result.ok) {
       history.replace('/');
     }
@@ -28,15 +26,6 @@ function Navbar(props) {
   return (
     <nav>
       <ul className="navbar">
-        <li>
-          <Link to="/portal" replace>
-            <img
-              className="navbar__logo"
-              src={logo}
-              alt="inline logo"
-            />
-          </Link>
-        </li>
         {props.tabs.map(tab => (
           <li key={tab.title}>
             <NavLink
@@ -46,19 +35,16 @@ function Navbar(props) {
               replace
             >
               {tab.icon}
-              <div className="navbar__tab__title-container">
-                <IconDot className="navbar__tab__dot"/>
-                <span className="navbar__tab__title">{tab.title}</span>
-              </div>
+              <span className="navbar__tab__title">{tab.title}</span>
             </NavLink>
           </li>
         ))}
         <li
-          className="navbar__tab navbar__logout"
+          className="navbar__tab"
           onClick={handleLogout}
         >
-          <IconLogout className="navbar__logout__icon"/>
-          <span className="navbar__logout__title">logout</span>
+          <IconLogout />
+          <span className="navbar__tab__title">logout</span>
         </li>
       </ul>
     </nav>
