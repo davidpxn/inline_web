@@ -96,7 +96,7 @@
     transition: top 600ms ease;
     transform: translateY(15rem);
 
-    animation: logo-animation 6800ms ease;
+    animation: mascot-animation 6800ms ease;
     animation-fill-mode: forwards;
 
     &:hover {
@@ -126,7 +126,7 @@
 
 /* Animation */
 
-@keyframes logo-animation {
+@keyframes mascot-animation {
   0% {
     transform: translateY(15rem);
   }
