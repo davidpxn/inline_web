@@ -4,6 +4,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Call from './call/Call';
 import Tickets from './tickets/Tickets';
 import Display from './display/Display';
+import Dashboard from './dashboard/Dashboard';
 
 import ButtonIcon from '../../components/buttonIcon/ButtonIcon';
 import Alert from '../../components/alert/Alert';
@@ -118,7 +119,7 @@ function Portal(props) {
         />
         <Switch>
           <Route exact path={`${path}/call`} component={Call} />
-          <Route component={null} />
+          <Route component={Dashboard} />
         </Switch>
       </div>
       <Alert
