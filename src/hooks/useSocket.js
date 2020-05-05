@@ -37,7 +37,13 @@ export default function useSocket(deps, eventListeners) {
 
     if (eventListeners) {
       for (const listener of eventListeners) {
-        socket.current.on(listener.event, listener.callback);
+        socket.current.on(listener.event, (data) => setBranchData(prevData => ({
+          ...prevData, ...data
+        })));
+
+        if (listener.callback) {
+          socket.current.on(listener.event, listener.callback);
+        }
       }
     }
   }, deps);

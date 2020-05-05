@@ -12,10 +12,7 @@ import './Display.scss';
 function Display() {
   const audio = useRef(new Audio(sound))
 
-  const handleNewCall = (data) => {
-    setBranchData(prevData => ({
-      ...prevData, current: data.current
-    }));
+  const handleNewCall = () => {
     audio.current.play();
   }
 

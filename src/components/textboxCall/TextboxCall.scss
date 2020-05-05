@@ -24,8 +24,9 @@
 
 
   &__subtext {
-    font-size: $s;
+    font-size: $xs;
     font-weight: 500;
+    font-family: $font-monospace;
 
     position: absolute;
     right: 0.8rem;
