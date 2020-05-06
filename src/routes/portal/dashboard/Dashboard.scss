@@ -23,9 +23,9 @@
   &__mascot {
     position: absolute;
 
-    top: 20%;
+    top: 25%;
     left:0;
-    height: 60%;
+    height: 50%;
     z-index: 0;
 
     transform: translateX(-15rem);
@@ -96,7 +96,7 @@
 
     background-color: $classic-blue;
     width: 0.4rem;
-    height: calc((100% - 6.5rem) / 2);
+    height: calc((100% - 6.5rem) / 3);
   }
 }
 
