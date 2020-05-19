@@ -25,7 +25,7 @@ function NotFound(props) {
       </div>
       <div className="not-found__text">
         <h1 className="not-found__404">404</h1>
-        <h2 className="not-found__message">Oops! Looks like your lost</h2>
+        <h2 className="not-found__message">Oops! Looks like you're lost</h2>
       </div>
     </div>
   );
